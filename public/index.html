@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TeamClaude Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23e8825c'/%3E%3Cpath d='M9 16h14M16 9v14' stroke='white' stroke-width='3.2' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <h1>TeamClaude</h1>
+      <span class="live" id="live" title=""><i></i><span id="live-text">Connecting</span></span>
+    </div>
+    <div class="controls">
+      <form class="threshold" id="threshold-form" title="Move to the next account at this usage">
+        <label for="threshold">Switch at</label>
+        <input id="threshold" type="number" min="1" max="100" step="1" inputmode="numeric">
+        <span>%</span>
+      </form>
+      <button class="link" id="probe" title="Read every account's quota without spending any">Refresh quotas</button>
+      <button class="link" id="reload" title="Re-read ~/.config/teamclaude.json">Reload config</button>
+      <button class="link icon" id="theme" title="Toggle theme" aria-label="Toggle theme">◐</button>
+    </div>
+  </header>
+
+  <main>
+    <p class="banner" id="offline" hidden>
+      TeamClaude isn't reachable. It reconnects on its own once the proxy is running.
+    </p>
+    <section class="wk" id="weekly-bar" hidden></section>
+    <div id="pools"></div>
+    <section class="forecast" id="forecast" hidden></section>
+  </main>
+
+  <div id="drawer" hidden></div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

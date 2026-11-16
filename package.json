@@ -1,0 +1,18 @@
+{
+  "name": "teamclaude-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A nicer live dashboard for a local TeamClaude proxy",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch-path=server.js server.js",
+    "start": "OPEN_BROWSER=1 node server.js",
+    "service:install": "sh scripts/service.sh install",
+    "service:uninstall": "sh scripts/service.sh uninstall",
+    "service:restart": "sh scripts/service.sh restart",
+    "service:status": "sh scripts/service.sh status"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

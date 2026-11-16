@@ -1,0 +1,4 @@
+node_modules/
+.DS_Store
+# personal: maps your account emails to short names — copy labels.example.json to create it
+labels.json
